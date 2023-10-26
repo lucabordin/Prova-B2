@@ -1,0 +1,31 @@
+name: dockercompose5765009869969460456
+services:
+  webapiautenticazioneutenti:
+    build:
+      context: D:\accademy ns12 D\accademy NS12\esercizi\visual studio\ProvaFase2
+      dockerfile: WebAPIAutenticazioneUtenti\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: webapiautenticazioneutenti
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+  webapigestionecarrello:
+    build:
+      context: D:\accademy ns12 D\accademy NS12\esercizi\visual studio\ProvaFase2
+      dockerfile: WebAPIGestioneCarrello\Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+    image: webapigestionecarrello
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        protocol: tcp
+networks:
+  default:
+    name: dockercompose5765009869969460456_default
